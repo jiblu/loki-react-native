@@ -4,10 +4,11 @@ import { View, Text } from 'react-native'
 import FullScreen from './FullScreen'
 import SearchScreen from './SearchScreen'
 import UserScreen from './UserScreen'
+import { toggleScreen } from '../actions/index'
 
 const ContentScreen = props => {
   const screen = props.currentScreen === 'FullScreen' ? <FullScreen /> :
-    props.currentScreen === 'UserScreen' ? <UserScreen users={props.users} /> : <SearchScreen />
+    props.currentScreen === 'UserScreen' ? <UserScreen users={props.users} onCancel={() => props.toggleScreen('SearchScreen')}/> : <SearchScreen />
   return screen 
 }
 
@@ -17,4 +18,6 @@ const mapStateToProps = state => {
     users: state.users
   }
 }
-export default connect(mapStateToProps)(ContentScreen)
+
+const mapDispatchToProps = { toggleScreen }
+export default connect(mapStateToProps, mapDispatchToProps)(ContentScreen)

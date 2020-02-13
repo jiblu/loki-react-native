@@ -2,14 +2,16 @@ import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { Colors } from '../themes/Index'
 
+
 const UserScreen = props => {
   return (
     <View>
       <Text>User Screen</Text>
       <TouchableOpacity
         style={styles.cancelButtonStyle}
+        onPress={props.onCancel}
       >
-        <Text>Cancel</Text>
+        <Text style={styles.cancelButtonTextStyle}>Cancel</Text>
       </TouchableOpacity>
       <Text>{JSON.stringify(props.users)}</Text>
     </View>
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%'
   },
-  searchButtonTextStyle: {
+  cancelButtonTextStyle: {
     textAlign: 'center',
     color: Colors.white
   },
