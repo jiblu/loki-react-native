@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { Colors } from '../themes/Index'
-
+import UserCard from './UserCard'
 
 const UserScreen = props => {
   return (
@@ -13,6 +13,9 @@ const UserScreen = props => {
       >
         <Text style={styles.cancelButtonTextStyle}>Cancel</Text>
       </TouchableOpacity>
+      {props.users.map((user, i) => {
+        return <UserCard username={user.username} name={user.name} />
+      })}
       <Text>{JSON.stringify(props.users)}</Text>
     </View>
   )
