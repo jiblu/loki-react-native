@@ -1,11 +1,13 @@
 import {
   GET_USER,
-  GET_USERS
+  GET_USERS,
+  TOGGLE_SCREEN
 } from '../actions/index'
 
 const initialState = {
   user: '',
-  users: [1, 2, 3]
+  users: [],
+  currentScreen: 'SearchScreen'
 }
 
 export default function rootReducer (state = initialState, action) {
@@ -18,7 +20,13 @@ export default function rootReducer (state = initialState, action) {
     case GET_USERS:
       return {
         ...state,
-        users: action.users
+        users: action.users,
+        currentScreen: 'UserScreen'
+      }
+    case TOGGLE_SCREEN:
+      return {
+        ...state,
+        currentScreen: action.currentScreen
       }
     default:
       return state

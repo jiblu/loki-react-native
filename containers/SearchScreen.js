@@ -8,7 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 import { connect } from 'react-redux'
-import { getUsers } from '../actions'
+import { getUsers } from '../actions/index'
 import { Colors } from '../themes/Index'
 import Header from '../components/Header'
 
@@ -29,7 +29,9 @@ class SearchScreen extends Component {
   }
 
   handleSearch () {
-    getUsers(this.state.user)
+    // puts the search result into store so we can use later
+    this.props.getUsers(this.state.user)
+    // need to change screen to user screen somehow
   }
 
   render ()  {
