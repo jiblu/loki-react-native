@@ -15,7 +15,13 @@ const UserScreen = props => {
       </TouchableOpacity>
       <ScrollView>
         {props.users.map((user, i) => {
-          return <UserCard username={user.username} name={user.name} />
+          return (
+            <UserCard
+              username={user.username}
+              name={user.name}
+              key={i}
+            />
+          )
         })}
         <Text>{JSON.stringify(props.users)}</Text>
       </ScrollView>
