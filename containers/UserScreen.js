@@ -1,12 +1,11 @@
 import React from 'react'
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { Colors } from '../themes/Index'
-import UserCard from './UserCard'
+import UserCard from '../components/UserCard'
 
 const UserScreen = props => {
   return (
     <View>
-      <Text>User Screen</Text>
       <TouchableOpacity
         style={styles.cancelButtonStyle}
         onPress={props.onCancel}
@@ -15,10 +14,13 @@ const UserScreen = props => {
       </TouchableOpacity>
       <ScrollView>
         {props.users.map((user, i) => {
+          const detailObject = {
+            'Username': user.username,
+            'Name': user.name
+          }
           return (
             <UserCard
-              username={user.username}
-              name={user.name}
+              detail={detailObject}
               key={i}
             />
           )
@@ -30,19 +32,6 @@ const UserScreen = props => {
 }
 
 const styles = StyleSheet.create({
-  screenStyle: {
-    margin: 10
-  },
-  inputStyle: {
-    backgroundColor: Colors.light,
-    borderRadius: 5,
-    padding: 10,
-    margin: 10,
-    width: '100%'
-  },
-  inputContainerStyle: {
-    alignItems: 'center'
-  },
   cancelButtonStyle: {
     backgroundColor: Colors.lightAccent,
     borderRadius: 10,
@@ -52,10 +41,6 @@ const styles = StyleSheet.create({
   cancelButtonTextStyle: {
     textAlign: 'center',
     color: Colors.white
-  },
-  screenTextStyle: {
-    color: Colors.lightAccent,
-    fontSize: 15
   }
 })
 

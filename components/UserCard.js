@@ -1,12 +1,20 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
+import TextDisplay from './TextDisplay'
 
 const UserCard = props => {
   return (
-    <View style={styles.cardStyle} >
-      <Text>{props.username}</Text>
-      <Text>{props.name}</Text>
+    <View style={styles.cardStyle}>
+      {Object.keys(props.detail).map((item, i) => {
+        return (
+          <TextDisplay
+            label={item}
+            text={props.detail[item]}
+            key={i}
+          />
+        )
+      })}
     </View>
   )
 }

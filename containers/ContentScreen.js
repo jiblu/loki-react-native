@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     color: Colors.lightAccent,
-    fontSize: 15
+    fontSize: 15,
+    paddingBottom: 10
   }
 })
 
