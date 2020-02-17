@@ -1,11 +1,14 @@
 import React from 'react'
-import { Image, Text, View, StyleSheet } from 'react-native'
+import { Image, View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import TextDisplay from './TextDisplay'
 
 const UserCard = props => {
   return (
-    <View style={styles.cardStyle}>
+    <TouchableOpacity
+      style={styles.cardStyle}
+      onPress={props.onDetail}
+    >
       <Image
         source={{ uri: props.profileImage }}
         style={styles.profileImageStyle}
@@ -23,7 +26,7 @@ const UserCard = props => {
           )
         })}
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

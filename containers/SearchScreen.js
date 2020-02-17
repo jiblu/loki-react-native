@@ -53,9 +53,6 @@ class SearchScreen extends Component {
               Search
             </Text>
           </TouchableOpacity>
-          <Text>
-            {JSON.stringify(this.props.users)}
-          </Text>
         </View>
       </View>
     )
