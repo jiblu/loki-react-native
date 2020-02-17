@@ -36,8 +36,7 @@ class SearchScreen extends Component {
 
   render ()  {
     return (
-      <View style={styles.screenStyle}>
-        <Text style={styles.screenTextStyle}>Find Users</Text>
+      <View>
         <View style={styles.inputContainerStyle}>
           <TextInput
             placeholder='User'
@@ -64,9 +63,6 @@ class SearchScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  screenStyle: {
-    margin: 10
-  },
   inputStyle: {
     backgroundColor: Colors.light,
     borderRadius: 5,
@@ -86,10 +82,6 @@ const styles = StyleSheet.create({
   searchButtonTextStyle: {
     textAlign: 'center',
     color: Colors.white
-  },
-  screenTextStyle: {
-    color: Colors.lightAccent,
-    fontSize: 15
   }
 })
 
