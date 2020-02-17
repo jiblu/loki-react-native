@@ -22,6 +22,7 @@ const ContentScreen = props => {
       case 'FullScreen':
         return (
           <FullScreen
+            onCancel={() => props.toggleScreen('SearchScreen')}
           />
         )
       case 'UserScreen':
@@ -29,6 +30,7 @@ const ContentScreen = props => {
           <UserScreen
             users={props.users}
             onCancel={() => props.toggleScreen('SearchScreen')}
+            onDetail={() => props.toggleScreen('FullScreen')}
           />
         )
       default:

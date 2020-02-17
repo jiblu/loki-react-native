@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { Colors } from '../themes/Index'
 import UserCard from '../components/UserCard'
 
@@ -19,12 +19,12 @@ const UserScreen = props => {
             Name: user.name
           }
           return (
-            <View key={i}>
-              <UserCard
-                profileImage={user.profile_image.medium}
-                detail={detailObject}
-              />
-            </View>
+            <UserCard
+              profileImage={user.profile_image.medium}
+              detail={detailObject}
+              key={i}
+              onDetail={() => props.onDetail()}
+            />
           )
         })}
         <Text>{JSON.stringify(props.users)}</Text>
