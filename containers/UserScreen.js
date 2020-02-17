@@ -27,7 +27,6 @@ const UserScreen = props => {
             />
           )
         })}
-        <Text>{JSON.stringify(props.users)}</Text>
       </ScrollView>
     </View>
   )

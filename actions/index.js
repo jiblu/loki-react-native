@@ -7,7 +7,8 @@ export const GET_USER = 'GET_USER'
 export const GET_USERS = 'GET_USERS'
 export const TOGGLE_SCREEN = 'TOGGLE_SCREEN'
 
-export const getUser = () => {
+// when clicking on user card save to store
+export const getUser = (username) => {
   return (dispatch) => {
     return axios.get(`${apiUrl}`)
       .then(response => {
