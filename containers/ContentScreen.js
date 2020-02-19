@@ -11,7 +11,6 @@ import { toggleScreen } from '../actions/index'
 
 // }
 
-
 const ContentScreen = props => {
   const screenTitle = props.currentScreen === 'FullScreen'
     ? 'User Detail' : props.currentScreen === 'UserScreen'
