@@ -32,4 +32,6 @@ export const getUsers = (user) => {
   }
 }
 
-export const toggleScreen = (screen) => ({ type: TOGGLE_SCREEN, currentScreen: screen })
+export const toggleScreen = (screen, userData) => {
+  return { type: TOGGLE_SCREEN, currentScreen: screen, user: userData }
+}

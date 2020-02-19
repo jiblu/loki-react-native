@@ -26,7 +26,8 @@ export default function rootReducer (state = initialState, action) {
     case TOGGLE_SCREEN:
       return {
         ...state,
-        currentScreen: action.currentScreen
+        currentScreen: action.currentScreen,
+        user: action.user
       }
     default:
       return state

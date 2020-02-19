@@ -22,6 +22,7 @@ const ContentScreen = props => {
         return (
           <FullScreen
             onCancel={() => props.toggleScreen('SearchScreen')}
+            user={props.user}
           />
         )
       case 'UserScreen':
@@ -29,7 +30,7 @@ const ContentScreen = props => {
           <UserScreen
             users={props.users}
             onCancel={() => props.toggleScreen('SearchScreen')}
-            onDetail={() => props.toggleScreen('FullScreen')}
+            onDetail={(userDetail) => props.toggleScreen('FullScreen', userDetail)}
           />
         )
       default:
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   return {
     currentScreen: state.currentScreen,
-    users: state.users
+    users: state.users,
+    user: state.user
   }
 }
 

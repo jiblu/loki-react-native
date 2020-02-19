@@ -23,7 +23,7 @@ const UserScreen = props => {
               profileImage={user.profile_image.medium}
               detail={detailObject}
               key={i}
-              onDetail={() => props.onDetail()}
+              onDetail={() => props.onDetail(props.users[i])}
             />
           )
         })}
