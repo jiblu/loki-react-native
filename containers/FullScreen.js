@@ -34,16 +34,29 @@ const FullScreen = props => {
             label='Photos'
             text={props.user.total_photos}
           />
-        </View>
-        <View>
-          <Text>
-            Photos
-          </Text>
+          <TextDisplay
+            label='Collections'
+            text={props.user.total_collections}
+          />
         </View>
       </View>
-      <Text>
-        {JSON.stringify(props.user)}
-      </Text>
+      <View>
+        <Text>
+          Photos
+        </Text>
+        <View>
+          {props.user.photos.map((photo, i) => {
+            return (
+              <View key={i}>
+                <Image
+                  source={{ uri: photo.urls.thumb }}
+                  style={styles.smallImageStyle}
+                />
+              </View>
+            )
+          })}
+        </View>
+      </View>
     </View>
   )
 }
@@ -72,6 +85,10 @@ const styles = StyleSheet.create({
     width: 128,
     height: 128,
     borderRadius: 10
+  },
+  smallImageStyle: {
+    width: 80,
+    height: 80 
   }
 })
 
