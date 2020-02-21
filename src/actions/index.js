@@ -1,5 +1,5 @@
 import axios from 'axios'
-import keys from '../apiKeys.js'
+import keys from '../../apiKeys.js'
 
 const apiUrl = 'https://api.unsplash.com'
 
