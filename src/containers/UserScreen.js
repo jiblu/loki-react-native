@@ -16,7 +16,9 @@ const UserScreen = props => {
         {props.users.map((user, i) => {
           const detailObject = {
             Username: user.username,
-            Name: user.name
+            Name: user.name,
+            Photos: user.total_photos,
+            Likes: user.total_likes
           }
           return (
             <UserCard

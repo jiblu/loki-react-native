@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+import { Image, Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
 import { Colors } from '../themes/Index'
 import TextDisplay from '../components/TextDisplay'
 
@@ -40,7 +40,7 @@ const FullScreen = props => {
           />
         </View>
       </View>
-      <View>
+      <ScrollView>
         <Text>
           Photos
         </Text>
@@ -52,11 +52,14 @@ const FullScreen = props => {
                   source={{ uri: photo.urls.thumb }}
                   style={styles.smallImageStyle}
                 />
+                <Text>
+                  {JSON.stringify(photo)}
+                </Text>
               </View>
             )
           })}
         </View>
-      </View>
+      </ScrollView>
     </View>
   )
 }
